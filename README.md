@@ -13,58 +13,46 @@ THEN OUR NANO TRANSFORM OUR DİGİTS FROM THE ULTRASONİC SENSOR İNTO ENGLİSH 
 
 THİS İS THE CODE THAT İT USES TO TRANSFORM DİGİTS İNTO ENGLİSH.
 
-#include <LiquidCrystal.h>
+ ```cpp
+  /* 
+   * Ultrasonic Distance Sensor Control Code
+   * Optimized for stable data transmission
+   */
+   
+  const int trigPin = 9;
+  const int echoPin = 10;
+  long duration;
+  int distance;
 
-// Senin eski pinlerin: RS, E, D4, D5, D6, D7 -> (12, 11, 5, 4, 3, 2)
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+  void setup() {
+    pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+    pinMode(echoPin, INPUT);  // Sets the echoPin as an Input
+    Serial.begin(9600);       // Starts the serial communication
+  }
 
-const int trigPin = 9;
-const int echoPin = 8;
+  void loop() {
+    // Clearing the trigPin
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
 
-void setup() {
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  // Ekranı her döngüde sıfırladığımız için setup'ı boş bırakabiliriz
-}
+    // Triggering the sensor by setting the trigPin HIGH for 10 microseconds
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
 
-void loop() {
-  // Ekranı her seferinde tazeleyerek hataları ve kaymaları engelliyoruz
-  lcd.begin(16, 2); 
-  lcd.clear();
-  lcd.noAutoscroll();
+    // Reading the echoPin, returns the sound wave travel time in microseconds
+    duration = pulseIn(echoPin, HIGH);
 
-  long sure;
-  float cm, metre;
+    // Calculating the distance (Speed of sound is 0.034 cm/us)
+    distance = duration * 0.034 / 2;
 
-  // Mesafe Ölçümü
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(5);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
+    // Prints the distance on the Serial Monitor
+    Serial.print("Distance: ");
+    Serial.print(distance);
+    Serial.println(" cm");
 
-  sure = pulseIn(echoPin, HIGH);
-  cm = sure / 58.2;
-  metre = cm / 100.0;
-
-  // --- EKRAN YAZDIRMA ---
-
-  // 1. Sağ Üst Köşeye "Miço" Yazdır (11. sütun, 0. satır)
-  lcd.setCursor(11, 0);
-  lcd.print("MİCHO");
-
-  // 2. Sol Üste CM Değerini Yazdır
-  lcd.setCursor(0, 0);
-  lcd.print("cm:");
-  lcd.print(cm, 1);
-
-  // 3. Alt Satıra Metre Değerini Yazdır
-  lcd.setCursor(0, 1);
-  lcd.print("Metre: ");
-  lcd.print(metre, 2);
-  lcd.print(" m");
-
-  delay(800); // Ekranın okunabilir olması için bekleme
-}
+    delay(60); // Essential delay for measurement efficiency
+  }
+```
 
 THİS SİGNAL İS THEN SENT TO OUR DİSPLAY, WİCH HAS AN I2C MODULE İNSTALLED. THE I2C MODULE İS VERY İMPORTANT BECAUSE THE PRODUCTS SİZE NECESSİTATES THE USE OF FEWER CABLES.
