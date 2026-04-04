@@ -70,12 +70,12 @@ void loop() {
   }
 
   lcd.setCursor(12, 0);
-  lcd.print("Mico"); // Sağ üst köşe imzası
+  lcd.print("Mico"); 
 
   lcd.setCursor(0, 1);
   lcd.print("Meter: ");
   lcd.print((toplamMesafe / 100.0), 2);
-  lcd.print(" m     "); // Eski karakterleri temizlemek için boşluk
+  lcd.print(" m     "); 
 
   delay(600); 
 }
