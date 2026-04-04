@@ -89,14 +89,14 @@ MAX: 5 METERS
 
 MİN: 12 CENTİMETER
 
+ <img dth="343" height="636" alt="image" src="https://github.com/user-attachments/assets/840b026a-34aa-4ff7-860b-2d5d5cafe1ac" />
+
   3D MODELS
 
 FULL DESİGN AND THE 3D PARTS
 
 OUR PROJECT WAS DESİGNED İN THİNKERCAD 3D AND AT THE END WE GET TWO MODELS. ONE OF THEM İS THE FULL PRODUCT WİTH SCREEN AND SENSORS.
  AND ONE OF THEM İS THE PARTS THAT YOU ARE GOİNG TO PRİNT İN YOUR 3D PRİNTERS.
- 
- <img width="343" height="636" alt="image" src="https://github.com/user-attachments/assets/840b026a-34aa-4ff7-860b-2d5d5cafe1ac" />
 
 FULL PROJECT(END PRODUCT):
 *   🔍 **[View Full Assembly (STL)](Ultrasonic_Meter_Parts.stl)**
