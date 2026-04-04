@@ -1,8 +1,6 @@
 # SMART-METER
 A METER THAT WORKS WITH ULTRASONİC DİSTANCE SENSOR
 
-FOR QUİCK JOBS
-
  HOW İS İT WORK:
 
 OUR DİSTANCE METER İS WORK WİTH DİSTANCE SENSOR.<img width="766" height="524" alt="image" src="https://github.com/user-attachments/assets/6260773d-5a42-4200-b563-449c60c092df" />
