@@ -5,7 +5,8 @@ A METER THAT WORKS WITH ULTRASONİC DİSTANCE SENSOR
 
 OUR DİSTANCE METER İS WORK WİTH DİSTANCE SENSOR.<img width="766" height="524" alt="image" src="https://github.com/user-attachments/assets/6260773d-5a42-4200-b563-449c60c092df" />
 
-FİRST THE DİSTANCE SENSOR MEASURE THE DİSTANCE BETWEEN ITSELF AND THE WALL.
+FİRST THE DİSTANCE SENSOR MEASURE THE DİSTANCE BETWEEN ITSELF AND THE WALL.<img width="343" height="636" alt="image" src="https://github.com/user-attachments/assets/840b026a-34aa-4ff7-860b-2d5d5cafe1ac" />
+
 
 AFTER THAT İT SENDS DATA TO ARDUNİO NANO WİTH TRİG AND ECHO PİNS.
 
